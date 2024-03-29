@@ -9,7 +9,7 @@
     <li><p>Encode the given plain text to utf-8.</p></li>
     <li><p>Convert this value as a hexadecimal number, then convert the result it to a decimal number. (Every digit of this number will be a key in some level of nested dictionary.)</p></li>
     <li><p>Split decimal number into blocks with strict ascending/descending order (no same digit repetition allowed in the same block, instead it starts a new one). Blocks order should be strictly alternated and the first block must be ascending. A block may contain one digit of it's necessary to keep alternated order.</p></li>
-    <li><p>Now, you need to fill nested dictionary. Each separate block of digit includes keys of the same dictionary, the values as always empty dictionaries. Taking blocks from left to right, you create a nested dictionary in such a way that digits of every next block become keys in last empty dictionary. Keep in mind the order of blocks and order of digits inside each block.</p></li>
+    <li><p>Now, you need to fill nested dictionary. Each separate block of digit includes keys of the same dictionary, the values as always empty dictionaries. Taking blocks from left to right, you create a nested dictionary in such a way that digits of every next block become keys in the next (in creation order) empty dictionary. Keep in mind the order of blocks and order of digits inside each block.</p></li>
 </ol>
 </p>
 
