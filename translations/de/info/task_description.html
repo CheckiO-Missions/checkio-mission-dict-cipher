@@ -1,0 +1,66 @@
+<!-- Describe task in general -->
+
+<p style="text-align: justify;">
+    In dieser Mission müssen Sie einen Klartext in ein verschachteltes Chiffrierwörterbuch umwandeln, wobei Sie die folgenden Schritte befolgen müssen.    
+</p>
+
+<p>
+<ol>
+    <li><p>Kodieren Sie den angegebenen Klartext in utf-8.</p></li>
+    <li><p>Konvertieren Sie diesen Wert in eine Hexadezimalzahl und wandeln Sie das Ergebnis dann in eine Dezimalzahl um. (Jede Ziffer dieser Zahl ist ein Schlüssel in einer Ebene des verschachtelten Wörterbuchs)</p></li>
+    <li><p>Teilen Sie die Dezimalzahl in Blöcke mit strikt aufsteigender/absteigender Reihenfolge auf (Wiederholungen derselben Ziffer im selben Block sind nicht erlaubt, stattdessen wird ein neuer Block begonnen). Die Reihenfolge der Blöcke sollte streng abwechselnd sein und der erste Block muss aufsteigend sein. Ein Block kann eine Ziffer enthalten, wenn dies notwendig ist, um die abwechselnde Reihenfolge einzuhalten.</p></li>
+    <li><p>Jetzt müssen Sie das verschachtelte Wörterbuch füllen. Jeder einzelne Ziffernblock enthält Schlüssel desselben Wörterbuchs, die Werte sind immer leere Wörterbücher. Indem Sie die Blöcke von links nach rechts nehmen, erstellen Sie ein verschachteltes Wörterbuch in der Weise, dass die Ziffern des jeweils nächsten Blocks zu Schlüsseln im nächsten (in der Reihenfolge der Erstellung) leeren Wörterbuch werden. Achten Sie auf die Reihenfolge der Blöcke und die Reihenfolge der Ziffern innerhalb der einzelnen Blöcke.</p></li>
+</ol>
+</p>
+
+<p style="text-align: justify;">
+    Die Beschreibung mag verwirrend sein, also sehen wir uns das Beispiel an.
+</p>
+
+<p style="text-align: center;">
+    <img  title="example" src="{{MEDIA}}cipher-dict.svg" alt="example" style="max-height: 800px"/>
+</p>
+<!-- Explain input and output values -->
+<p>
+   <strong>Eingabe:</strong> Ein einfacher Text als Zeichenkette.
+</p>
+
+<p>
+   <strong>Ausgabe:</strong> Verschlüsselte Daten in Form eines verschachtelten Wörterbuchs.
+</p>
+
+
+<!-- Give some usage examples -->
+<div class="for_info_only">
+    <p>
+        <strong>Beispiele:</strong>
+    </p>
+    
+{% if is_js %}
+<pre class="brush: javascript">
+</pre>
+{% else %}
+<pre class="brush: python">get_cipher("hello") == {4: {4: {8: {3: {7: {0: {4: {}, 7: {}}, 2: {2: {}}}, 8: {3: {}}}}}}}
+get_cipher("This is a plain text.") == {1: {3: {2: {1: {4: {7: {4: {1: {0: {}, 2: {}, 7: {}}, 4: {9: {}}, 8: {3: {}}},
+                                      6: {8: {1: {}, 4: {}, 9: {}}}}}, 9: {5: {5: {6: {1: {}, 4: {}}, 8: {}}}}}}}},
+                                      2: {6: {2: {8: {4: {9: {5: {2: {}, 8: {}}}}}}}}, 3: {2: {4: {1: {4: {8: {3: {0: {},
+                                      2: {}}}}}, 3: {5: {3: {5: {4: {}, 7: {}}}}}}}}}
+</pre>
+{% endif %}
+</div>
+
+
+<!-- Here you can explain how it can be used in development -->
+<!-- The section is optional -->
+<p class="for_info_only">
+
+    <strong>Wie es verwendet wird:</strong>
+    <i>(Als Chiffre ist es vielleicht nicht wertvoll, aber es ist nützlich, um die Umwandlung von Zeichencodes und die Struktur von Wörterbüchern zu studieren)</i>
+</p>
+
+<!-- Here you can explain some constraints for input-->
+<!-- The section is optional -->
+<p>
+    <strong>Vorbedingung:</strong>
+    <i>Der Text enthält nur ASCII-Symbole.</i>
+</p>
