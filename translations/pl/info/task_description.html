@@ -1,0 +1,66 @@
+<!-- Describe task in general -->
+
+<p style="text-align: justify;">
+    W tej misji muszą Państwo przekonwertować zwykły tekst na zagnieżdżony słownik szyfrów zgodnie z poniższymi krokami.    
+</p>
+
+<p>
+<ol>
+    <li><p>Proszę zakodować podany tekst jawny do utf-8.</p></li>
+    <li><p>Proszę przekonwertować tę wartość na liczbę szesnastkową, a następnie przekonwertować wynik na liczbę dziesiętną. (Każda cyfra tej liczby będzie kluczem na pewnym poziomie zagnieżdżonego słownika)</p></li>
+    <li><p>Proszę podzielić liczbę dziesiętną na bloki w ścisłej kolejności rosnącej/malejącej (nie wolno powtarzać tej samej cyfry w tym samym bloku, zamiast tego rozpoczyna się nowy). Kolejność bloków powinna być ściśle naprzemienna, a pierwszy blok musi być rosnący. Blok może zawierać jedną cyfrę, jeśli jest to konieczne do zachowania naprzemiennej kolejności.</p></li>
+    <li><p>Teraz proszę wypełnić zagnieżdżony słownik. Każdy oddzielny blok cyfr zawiera klucze tego samego słownika, a wartości są zawsze pustymi słownikami. Biorąc bloki od lewej do prawej, tworzymy zagnieżdżony słownik w taki sposób, że cyfry każdego kolejnego bloku stają się kluczami w kolejnym (w kolejności tworzenia) pustym słowniku. Proszę pamiętać o kolejności bloków i kolejności cyfr wewnątrz każdego bloku.</p></li>
+</ol>
+</p>
+
+<p style="text-align: justify;">
+    Opis może być mylący, więc proszę spojrzeć na przykład.
+</p>
+
+<p style="text-align: center;">
+    <img  title="example" src="{{MEDIA}}cipher-dict.svg" alt="example" style="max-height: 800px"/>
+</p>
+<!-- Explain input and output values -->
+<p>
+   <strong>Wejście:</strong> Zwykły tekst jako ciąg znaków.
+</p>
+
+<p>
+   <strong>Dane wyjściowe:</strong> Dane szyfru jako zagnieżdżony słownik.
+</p>
+
+
+<!-- Give some usage examples -->
+<div class="for_info_only">
+    <p>
+        <strong>Przykłady:</strong>
+    </p>
+    
+{% if is_js %}
+<pre class="brush: javascript">
+</pre>
+{% else %}
+<pre class="brush: python">get_cipher("hello") == {4: {4: {8: {3: {7: {0: {4: {}, 7: {}}, 2: {2: {}}}, 8: {3: {}}}}}}}
+get_cipher("This is a plain text.") == {1: {3: {2: {1: {4: {7: {4: {1: {0: {}, 2: {}, 7: {}}, 4: {9: {}}, 8: {3: {}}},
+                                      6: {8: {1: {}, 4: {}, 9: {}}}}}, 9: {5: {5: {6: {1: {}, 4: {}}, 8: {}}}}}}}},
+                                      2: {6: {2: {8: {4: {9: {5: {2: {}, 8: {}}}}}}}}, 3: {2: {4: {1: {4: {8: {3: {0: {},
+                                      2: {}}}}}, 3: {5: {3: {5: {4: {}, 7: {}}}}}}}}}
+</pre>
+{% endif %}
+</div>
+
+
+<!-- Here you can explain how it can be used in development -->
+<!-- The section is optional -->
+<p class="for_info_only">
+
+    <strong>Jak to jest używane:</strong>
+    <i>(Może nie być wartościowy jako szyfr, ale będzie przydatny do studiowania konwersji kodów znaków i struktury słownika)</i>
+</p>
+
+<!-- Here you can explain some constraints for input-->
+<!-- The section is optional -->
+<p>
+    <strong>Warunek wstępny:</strong>
+    <i>Tekst zawiera tylko symbole ASCII.</i>
+</p>
